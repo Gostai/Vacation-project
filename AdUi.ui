@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>898</width>
+    <height>479</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Планирование отпусков</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>vacation.ico</normaloff>vacation.ico</iconset>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QComboBox" name="comboBoxYear"/>
+      </item>
+      <item>
+       <widget class="QLabel" name="labelBanner">
+        <property name="text">
+         <string>Выбор отпуска на 2020 год</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="QTableWidget" name="tableWidget">
+      <property name="font">
+       <font>
+        <pointsize>8</pointsize>
+       </font>
+      </property>
+      <property name="sizeAdjustPolicy">
+       <enum>QAbstractScrollArea::AdjustToContentsOnFirstShow</enum>
+      </property>
+      <attribute name="horizontalHeaderMinimumSectionSize">
+       <number>19</number>
+      </attribute>
+      <attribute name="verticalHeaderVisible">
+       <bool>true</bool>
+      </attribute>
+      <attribute name="verticalHeaderMinimumSectionSize">
+       <number>20</number>
+      </attribute>
+     </widget>
+    </item>
+    <item>
+     <widget class="QGroupBox" name="groupBox">
+      <property name="title">
+       <string>Выбор отпуска</string>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <item>
+        <widget class="QGroupBox" name="groupBox_2">
+         <property name="baseSize">
+          <size>
+           <width>50</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="title">
+          <string>Сотрудник:</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_2">
+          <item>
+           <widget class="QLabel" name="labelName">
+            <property name="baseSize">
+             <size>
+              <width>50</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>Иванов И.И.</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="groupBoxNumParts">
+         <property name="title">
+          <string>Количество частей:</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout">
+          <item row="0" column="1">
+           <widget class="QLCDNumber" name="lcdNumberNP">
+            <property name="intValue" stdset="0">
+             <number>1</number>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="0">
+           <widget class="QSlider" name="horizontalSliderNumParts">
+            <property name="baseSize">
+             <size>
+              <width>40</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="minimum">
+             <number>1</number>
+            </property>
+            <property name="maximum">
+             <number>6</number>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="groupBox_3">
+         <property name="title">
+          <string>Дата начала</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_3">
+          <item>
+           <widget class="QDateEdit" name="dateEdit">
+            <property name="calendarPopup">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="groupBox_5">
+         <property name="title">
+          <string>Длительность части:</string>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_5">
+          <item>
+           <widget class="QSlider" name="horizontalSliderRestLength">
+            <property name="minimum">
+             <number>1</number>
+            </property>
+            <property name="maximum">
+             <number>60</number>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLCDNumber" name="lcdNumberLength">
+            <property name="intValue" stdset="0">
+             <number>1</number>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="groupBoxWay">
+         <property name="title">
+          <string>Время на дорогу: 0</string>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <property name="checked">
+          <bool>false</bool>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_3">
+          <item>
+           <widget class="QSlider" name="horizontalSliderRestWayLength">
+            <property name="maximum">
+             <number>20</number>
+            </property>
+            <property name="singleStep">
+             <number>2</number>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLCDNumber" name="lcdNumberWay"/>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButtonSetRest">
+         <property name="text">
+          <string>Применить</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>898</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>Файл</string>
+    </property>
+    <addaction name="actionExit"/>
+   </widget>
+   <widget class="QMenu" name="menu_2">
+    <property name="title">
+     <string>Редактирование</string>
+    </property>
+    <addaction name="actionChangeOneRest"/>
+    <addaction name="actionChangeOneNumRests"/>
+    <addaction name="actionDelOneRest"/>
+    <addaction name="separator"/>
+    <addaction name="actionDelAll"/>
+    <addaction name="actionListsAndRatings"/>
+    <addaction name="actionNotCrossingMatrix"/>
+    <addaction name="actionOptions"/>
+   </widget>
+   <widget class="QMenu" name="menu_3">
+    <property name="title">
+     <string>Просмотр</string>
+    </property>
+    <addaction name="actionPreShowGraph"/>
+    <addaction name="actionSaveGraph"/>
+    <addaction name="actionSaveExcelView"/>
+    <addaction name="actionSaveDencity"/>
+   </widget>
+   <widget class="QMenu" name="menu_4">
+    <property name="title">
+     <string>Помошь</string>
+    </property>
+    <addaction name="actionAbout"/>
+   </widget>
+   <addaction name="menu"/>
+   <addaction name="menu_2"/>
+   <addaction name="menu_3"/>
+   <addaction name="menu_4"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionExit">
+   <property name="text">
+    <string>Выход</string>
+   </property>
+  </action>
+  <action name="actionChangeOneRest">
+   <property name="text">
+    <string>Изменить отпуск сотрудника</string>
+   </property>
+  </action>
+  <action name="actionChangeOneNumRests">
+   <property name="text">
+    <string>Изменить количество отпусков</string>
+   </property>
+  </action>
+  <action name="actionDelOneRest">
+   <property name="text">
+    <string>Удалить отпуск сотрудника</string>
+   </property>
+  </action>
+  <action name="actionDelAll">
+   <property name="text">
+    <string>Сбросить все отпуска</string>
+   </property>
+  </action>
+  <action name="actionListsAndRatings">
+   <property name="text">
+    <string>Списки и рейтинги</string>
+   </property>
+  </action>
+  <action name="actionOptions">
+   <property name="text">
+    <string>Настройки</string>
+   </property>
+  </action>
+  <action name="actionSaveGraph">
+   <property name="text">
+    <string>Сохранить график</string>
+   </property>
+  </action>
+  <action name="actionSaveExcelView">
+   <property name="text">
+    <string>Сохранить представление</string>
+   </property>
+  </action>
+  <action name="actionPreShowGraph">
+   <property name="text">
+    <string>Предварительный просмотр</string>
+   </property>
+  </action>
+  <action name="actionSaveDencity">
+   <property name="text">
+    <string>Сохранить плотность дней</string>
+   </property>
+  </action>
+  <action name="actionAbout">
+   <property name="text">
+    <string>О программе</string>
+   </property>
+  </action>
+  <action name="actionNotCrossingMatrix">
+   <property name="text">
+    <string>Матрица непересечений</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
